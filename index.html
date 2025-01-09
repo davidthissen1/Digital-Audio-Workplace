@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web DAW</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="patternCreator.js"></script>
+    <script type="module" src="songComposer.js"></script>
+    <script type="module" src="script.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <header>
+            <button id="pattern-creator-tab">Pattern Creator</button>
+            <button id="song-composer-tab">Song Composer</button>
+        </header>
+
+        <main id="pattern-creator" class="section active">
+            <h2>Pattern Creator</h2>
+            <div id="grid-container">
+                <!-- Grid rows with buttons and steps will be dynamically generated here -->
+            </div>
+            <button id="play-pattern">Play Pattern</button>
+            <button id="save-pattern">Save Pattern</button>
+        </main>
+
+        <main id="song-composer" class="section hidden">
+            <h2>Song Composer</h2>
+            <div id="saved-patterns">
+                <h3>Saved Patterns</h3>
+                <div id="patterns-container">
+                    <!-- Draggable saved patterns will appear here -->
+                </div>
+            </div>
+            <div id="timeline-container">
+                <h3>Timeline</h3>
+                <div id="timeline"></div>
+            </div>
+            <button id="play-song">Play Song</button>
+            <button id="export-song">Export Song</button>
+        </main>
+    </div>
+</body>
+</html>

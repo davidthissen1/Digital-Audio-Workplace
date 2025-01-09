@@ -1,0 +1,142 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e;
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px;
+}
+
+header button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+header button:hover {
+    background-color: #777;
+}
+
+.section {
+    display: none;
+    padding: 20px;
+}
+
+.section.active {
+    display: block;
+}
+
+/* Grid and Button Layout */
+#grid-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.grid-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    width: 90%; /* Ensures alignment */
+}
+
+.add-file {
+    margin-right: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.add-file:hover {
+    background-color: #0056b3;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    gap: 5px;
+    width: 100%; /* Ensures rows align properly */
+}
+
+.step {
+    background: #444;
+    border: 1px solid #555;
+    width: 100%;
+    height: 40px; /* Adjusted for better visibility */
+    cursor: pointer;
+}
+
+.step.active {
+    background: #007bff;
+}
+
+#saved-patterns {
+    margin-bottom: 20px;
+}
+
+#patterns-container {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    background-color: #2e2e2e;
+    border: 1px solid #444;
+    border-radius: 5px;
+}
+
+.pattern-block {
+    background-color: #555;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: grab;
+    user-select: none;
+}
+
+.pattern-block:hover {
+    background-color: #777;
+}
+
+#timeline-container {
+    margin-top: 20px;
+}
+
+#timeline {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    border-radius: 5px;
+    min-height: 100px;
+}
+
+.timeline-slot {
+    flex: 1;
+    background-color: #333;
+    border: 1px dashed #555;
+    border-radius: 5px;
+    min-height: 80px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.9em;
+}
