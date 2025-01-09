@@ -74,4 +74,8 @@ document.getElementById('export-song').addEventListener('click', () => {
 
 // Initialize
 createTimelineSlots();
-displaySavedPatterns();
+
+// Call displaySavedPatterns() when the Song Composer loads
+document.getElementById('song-composer-tab').addEventListener('click', () => {
+    displaySavedPatterns(); // Refresh the saved patterns whenever Song Composer is opened
+});

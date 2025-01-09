@@ -72,4 +72,5 @@ document.getElementById('play-pattern').addEventListener('click', () => {
 document.getElementById('save-pattern').addEventListener('click', () => {
     savedPatterns.push(pattern.map((row) => [...row])); // Save a copy of the current pattern
     alert('Pattern saved!');
+    displaySavedPatterns();
 });
