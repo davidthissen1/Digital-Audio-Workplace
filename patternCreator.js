@@ -1,8 +1,7 @@
-// Shared data
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 export const savedPatterns = [];
 export const oneShots = Array(4).fill(null); // Holds sounds for each row
 
-const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 const pattern = Array(4).fill().map(() => Array(16).fill(false)); // 4x16 grid pattern
 
 // Generate grid and "Add File" buttons
@@ -13,7 +12,7 @@ for (let i = 0; i < 4; i++) {
 
     // Add File button
     const addFileButton = document.createElement('button');
-    addFileButton.textContent = `Add File (Row ${i + 1})`;
+    addFileButton.textContent = `Add File`;
     addFileButton.className = 'add-file';
     addFileButton.addEventListener('click', async () => {
         const input = document.createElement('input');
@@ -22,9 +21,14 @@ for (let i = 0; i < 4; i++) {
         input.addEventListener('change', async (event) => {
             const file = event.target.files[0];
             if (file) {
-                const arrayBuffer = await file.arrayBuffer();
-                oneShots[i] = await audioContext.decodeAudioData(arrayBuffer);
-                alert(`Sound added to Row ${i + 1}`);
+                try {
+                    const arrayBuffer = await file.arrayBuffer();
+                    oneShots[i] = await audioContext.decodeAudioData(arrayBuffer);
+                    addFileButton.textContent = file.name; // Rename button to file name
+                    alert(`Sound "${file.name}" added to Row ${i + 1}`);
+                } catch (error) {
+                    alert('Failed to load the audio file. Please try again.');
+                }
             }
         });
         input.click();
@@ -70,7 +74,6 @@ document.getElementById('play-pattern').addEventListener('click', () => {
 
 // Save the pattern
 document.getElementById('save-pattern').addEventListener('click', () => {
-    savedPatterns.push(pattern.map((row) => [...row])); // Save a copy of the current pattern
+    savedPatterns.push(pattern.map((row) => [...row])); // Deep copy of the pattern
     alert('Pattern saved!');
-    displaySavedPatterns();
 });

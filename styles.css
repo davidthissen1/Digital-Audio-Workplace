@@ -62,6 +62,11 @@ header button:hover {
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    width: 150px; /* Fixed width for the button */
+    text-align: center;
+    white-space: nowrap; /* Prevents text wrapping */
+    overflow: hidden; /* Ensures text doesn't overflow */
+    text-overflow: ellipsis; /* Adds "..." for overflowing text */
 }
 
 .add-file:hover {
