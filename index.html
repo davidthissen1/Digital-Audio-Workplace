@@ -8,6 +8,9 @@
     <script type="module" src="patternCreator.js"></script>
     <script type="module" src="songComposer.js"></script>
     <script type="module" src="script.js"></script>
+    <script type="module" src="pianoRoll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.26/Tone.min.js"></script>
+
 
 </head>
 <body>
@@ -15,6 +18,8 @@
         <header>
             <button id="pattern-creator-tab">Pattern Creator</button>
             <button id="song-composer-tab">Song Composer</button>
+            <button id="piano-roll-tab">Piano Roll</button> <!-- New Tab -->
+
         </header>
 
         <main id="pattern-creator" class="section active">
@@ -41,6 +46,13 @@
             <button id="play-song">Play Song</button>
             <button id="export-song">Export Song</button>
         </main>
+        <main id="piano-roll" class="section hidden">
+            <h2>Piano Roll</h2>
+            <div id="piano-roll-grid"></div>
+            <button id="play-piano-roll">Play</button>
+        </main>
+        
     </div>
+
 </body>
 </html>
